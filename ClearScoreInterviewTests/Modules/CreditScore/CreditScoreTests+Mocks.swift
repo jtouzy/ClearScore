@@ -37,3 +37,11 @@ class CreditScoreViewMock: CreditScoreView {
         setScoreStateStatus.iterate(with: model)
     }
 }
+
+class CreditScorePresenterMock: CreditScorePresenter {
+    var didLoadStatus = CallStatus<Never>.none
+
+    func didLoad() {
+        didLoadStatus.iterate()
+    }
+}

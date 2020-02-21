@@ -28,7 +28,9 @@ extension UIView {
         shapeLayer.fillColor = fillColor?.cgColor
         shapeLayer.path = circularPath.cgPath
         shapeLayer.strokeColor = borderColor?.cgColor
-        shapeLayer.lineWidth = borderWidth ?? shapeLayer.lineWidth
+        if let borderWidth = borderWidth {
+            shapeLayer.lineWidth = borderWidth
+        }
         shapeLayer.lineCap = CAShapeLayerLineCap.round
         layer.insertSublayer(shapeLayer, at: layerIndex)
         return shapeLayer

@@ -13,17 +13,19 @@ protocol CreditScoreView: class {
     func setScoreState(_ model: CreditScoreModelUI)
 }
 
-private struct Specs {
+struct CreditScoreViewControllerSpecs {
     static let containerCircleRadius: CGFloat = UIScreen.main.bounds.size.width / 3
     static let containerCircleBorderColor: UIColor = .black
     static let containerCircleBorderWidth: CGFloat = 1
     static let scoreCircleRadius: CGFloat = containerCircleRadius - 10
-    static let scoreCircleBorderColor: UIColor = .primary
+    static let scoreCircleBorderColor: UIColor? = .primary
     static let scoreCircleBorderWidth: CGFloat = 4
     static let hideActivityIndicatorAnimationDuration: TimeInterval = 0.5
     static let drawCirclesAnimationDuration: TimeInterval = 0.5
     static let drawLabelsAnimationDuration: TimeInterval = 0.5
 }
+
+private typealias Specs = CreditScoreViewControllerSpecs
 
 class CreditScoreViewController: UIViewController {
     @IBOutlet weak var presentationLabel: UILabel! {

@@ -9,5 +9,5 @@
 import UIKit
 
 extension UIColor {
-    static var primary: UIColor { UIColor(named: "Primary") ?? .clear }
+    static var primary: UIColor? { UIColor(named: "Primary") }
 }

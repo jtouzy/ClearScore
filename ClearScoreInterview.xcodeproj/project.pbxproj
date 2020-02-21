@@ -27,6 +27,8 @@
 		53441B7B24005BAC0042F4AF /* CreditScoreModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B7A24005BAC0042F4AF /* CreditScoreModels.swift */; };
 		53441B7F24005F010042F4AF /* CreditScorePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B7E24005F010042F4AF /* CreditScorePresenterTests.swift */; };
 		53441B8124005F480042F4AF /* CreditScoreTests+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B8024005F480042F4AF /* CreditScoreTests+Mocks.swift */; };
+		539DB16E2400690100CEB3E8 /* CreditScoreViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539DB16D2400690100CEB3E8 /* CreditScoreViewTests.swift */; };
+		539DB17024006FB700CEB3E8 /* XCTestCase+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539DB16F24006FB700CEB3E8 /* XCTestCase+extensions.swift */; };
 		53F2BC97240004D0005D0433 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC96240004D0005D0433 /* AppDelegate.swift */; };
 		53F2BC99240004D0005D0433 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC98240004D0005D0433 /* SceneDelegate.swift */; };
 		53F2BC9E240004D0005D0433 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F2BC9C240004D0005D0433 /* Main.storyboard */; };
@@ -75,6 +77,8 @@
 		53441B7A24005BAC0042F4AF /* CreditScoreModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreModels.swift; sourceTree = "<group>"; };
 		53441B7E24005F010042F4AF /* CreditScorePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScorePresenterTests.swift; sourceTree = "<group>"; };
 		53441B8024005F480042F4AF /* CreditScoreTests+Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreditScoreTests+Mocks.swift"; sourceTree = "<group>"; };
+		539DB16D2400690100CEB3E8 /* CreditScoreViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreViewTests.swift; sourceTree = "<group>"; };
+		539DB16F24006FB700CEB3E8 /* XCTestCase+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+extensions.swift"; sourceTree = "<group>"; };
 		53F2BC93240004D0005D0433 /* ClearScoreInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScoreInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F2BC96240004D0005D0433 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53F2BC98240004D0005D0433 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 				53441B4B240011BD0042F4AF /* CallStatus.swift */,
 				53441B51240015330042F4AF /* JSONDecoder+extensions.swift */,
 				53441B5924001FA50042F4AF /* TestError.swift */,
+				539DB16F24006FB700CEB3E8 /* XCTestCase+extensions.swift */,
 			);
 			path = __TestUtilities;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 			children = (
 				53441B7E24005F010042F4AF /* CreditScorePresenterTests.swift */,
 				53441B8024005F480042F4AF /* CreditScoreTests+Mocks.swift */,
+				539DB16D2400690100CEB3E8 /* CreditScoreViewTests.swift */,
 			);
 			path = CreditScore;
 			sourceTree = "<group>";
@@ -463,6 +469,8 @@
 				53441B4C240011BD0042F4AF /* CallStatus.swift in Sources */,
 				53441B8124005F480042F4AF /* CreditScoreTests+Mocks.swift in Sources */,
 				53441B64240027D70042F4AF /* HTTPDataProviderTests+Mocks.swift in Sources */,
+				539DB16E2400690100CEB3E8 /* CreditScoreViewTests.swift in Sources */,
+				539DB17024006FB700CEB3E8 /* XCTestCase+extensions.swift in Sources */,
 				53441B542400182E0042F4AF /* Bundle+extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
