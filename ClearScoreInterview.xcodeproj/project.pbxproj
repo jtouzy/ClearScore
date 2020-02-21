@@ -79,7 +79,7 @@
 		53441B8024005F480042F4AF /* CreditScoreTests+Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreditScoreTests+Mocks.swift"; sourceTree = "<group>"; };
 		539DB16D2400690100CEB3E8 /* CreditScoreViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreViewTests.swift; sourceTree = "<group>"; };
 		539DB16F24006FB700CEB3E8 /* XCTestCase+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+extensions.swift"; sourceTree = "<group>"; };
-		53F2BC93240004D0005D0433 /* ClearScoreInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScoreInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53F2BC93240004D0005D0433 /* ClearScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F2BC96240004D0005D0433 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53F2BC98240004D0005D0433 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		53F2BC9D240004D0005D0433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 		53F2BC94240004D0005D0433 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				53F2BC93240004D0005D0433 /* ClearScoreInterview.app */,
+				53F2BC93240004D0005D0433 /* ClearScore.app */,
 				53F2BCA9240004D6005D0433 /* ClearScoreInterviewTests.xctest */,
 			);
 			name = Products;
@@ -348,7 +348,7 @@
 			);
 			name = ClearScoreInterview;
 			productName = ClearScoreInterview;
-			productReference = 53F2BC93240004D0005D0433 /* ClearScoreInterview.app */;
+			productReference = 53F2BC93240004D0005D0433 /* ClearScore.app */;
 			productType = "com.apple.product-type.application";
 		};
 		53F2BCA8240004D6005D0433 /* ClearScoreInterviewTests */ = {
@@ -632,7 +632,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jtouzy.ClearScoreInterview;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ClearScore;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -649,7 +649,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jtouzy.ClearScoreInterview;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ClearScore;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
