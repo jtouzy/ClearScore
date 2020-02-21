@@ -10,6 +10,13 @@ public enum CallStatus<T> {
     case none
     case called(iterations: Int, results: [T])
 
+    public var isCalled: Bool {
+        if case .none = self {
+            return false
+        }
+        return true
+    }
+
     public var firstCallParam: T? {
         switch self {
         case .none:
