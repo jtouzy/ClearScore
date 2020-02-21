@@ -17,6 +17,7 @@
 		53441B5F240024270042F4AF /* AppEnvironmentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B5E240024270042F4AF /* AppEnvironmentProvider.swift */; };
 		53441B622400250A0042F4AF /* EnvironmentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B612400250A0042F4AF /* EnvironmentProvider.swift */; };
 		53441B64240027D70042F4AF /* HTTPDataProviderTests+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B63240027D70042F4AF /* HTTPDataProviderTests+Mocks.swift */; };
+		53441B662400315C0042F4AF /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B652400315C0042F4AF /* UIView+extensions.swift */; };
 		53F2BC97240004D0005D0433 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC96240004D0005D0433 /* AppDelegate.swift */; };
 		53F2BC99240004D0005D0433 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC98240004D0005D0433 /* SceneDelegate.swift */; };
 		53F2BC9B240004D0005D0433 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC9A240004D0005D0433 /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 		53441B5E240024270042F4AF /* AppEnvironmentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironmentProvider.swift; sourceTree = "<group>"; };
 		53441B612400250A0042F4AF /* EnvironmentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentProvider.swift; sourceTree = "<group>"; };
 		53441B63240027D70042F4AF /* HTTPDataProviderTests+Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPDataProviderTests+Mocks.swift"; sourceTree = "<group>"; };
+		53441B652400315C0042F4AF /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
 		53F2BC93240004D0005D0433 /* ClearScoreInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScoreInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F2BC96240004D0005D0433 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53F2BC98240004D0005D0433 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		53F2BCCC24000F12005D0433 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				53441B652400315C0042F4AF /* UIView+extensions.swift */,
 				53F2BCCD24000F21005D0433 /* URLSession+extensions.swift */,
 			);
 			path = Extensions;
@@ -370,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53441B662400315C0042F4AF /* UIView+extensions.swift in Sources */,
 				53F2BCC3240008B3005D0433 /* CreditReportInfo.swift in Sources */,
 				53441B5F240024270042F4AF /* AppEnvironmentProvider.swift in Sources */,
 				53441B5824001D910042F4AF /* DataLayerError.swift in Sources */,
