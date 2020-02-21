@@ -9,42 +9,48 @@
 @testable import ClearScoreInterview
 import XCTest
 
-private class HTTPInvokerMock: HTTPInvoker {
-    var callStatus = CallStatus<URLRequest>.none
-    let data: Data?
-    let error: Error?
-
-    init(data: Data? = nil, error: Error? = nil) {
-        self.data = data
-        self.error = error
-    }
-
-    func call(request: URLRequest, completionHandler: @escaping DataTaskResult) {
-        callStatus.iterate(with: request)
-        completionHandler(data, nil, error)
-    }
-}
-
 class HTTPDataProviderTests: XCTestCase {
     private typealias Package = (
         sut: HTTPDataProvider,
+        environmentProvider: EnvironmentProviderMock,
         httpInvoker: HTTPInvokerMock
     )
 
-    private func createSUT(fromJsonFile fileName: String? = nil,
+    private func createSUT(apiURL: String? = "https://defaulturl",
+                           fromJsonFile fileName: String? = nil,
                            error: Error? = nil) -> Package {
         var data: Data?
         if let fileName = fileName {
             data = Bundle(for: HTTPDataProviderTests.self).jsonData(fromFile: fileName)
         }
+        let environmentProviderMock = EnvironmentProviderMock(apiURL: apiURL)
         let httpInvokerMock = HTTPInvokerMock(data: data, error: error)
         let sut = HTTPDataProvider()
+        sut.environmentProvider = environmentProviderMock
         sut.httpInvoker = httpInvokerMock
-        return (sut: sut, httpInvoker: httpInvokerMock)
+        return (
+            sut: sut,
+            environmentProvider: environmentProviderMock,
+            httpInvoker: httpInvokerMock
+        )
     }
 }
 
-// FIXME: Test error for non retrieving URL.
+extension HTTPDataProviderTests {
+    func test_fetchCreditScore_shouldSendProvidedURL() {
+        // Given
+        let package = createSUT(fromJsonFile: nil, error: nil)
+        // When
+        package.sut.fetchCreditScore(completion: { _, _ in })
+        // Then
+        XCTAssertEqual(
+            package.httpInvoker.callStatus.firstCallParam?.url?.absoluteString,
+            URL(string: "https://defaulturl")?
+                .appendingPathComponent(HTTPRoute.fetchCreditScore.rawValue)
+                .absoluteString
+        )
+    }
+}
 
 extension HTTPDataProviderTests {
     private typealias FetchCreditScoreSuccessHandler = (CreditScore?, CreditScore?, DataLayerError?) -> Void
@@ -101,12 +107,12 @@ extension HTTPDataProviderTests {
     private typealias FetchCreditScoreFailureHandler = (CreditScore?, DataLayerError?) -> Void
 
     private func parameterized_fetchCreditScore_failure(
-        expectationId: String, error: Error? = nil,
+        expectationId: String, apiURL: String? = "https://defaulturl", error: Error? = nil,
         handler: @escaping FetchCreditScoreFailureHandler
     ) -> XCTestExpectation {
         // Given
         let expect = expectation(description: expectationId)
-        let package = createSUT(fromJsonFile: nil, error: error)
+        let package = createSUT(apiURL: apiURL, fromJsonFile: nil, error: error)
         // When
         package.sut.fetchCreditScore { creditScore, error in
             expect.fulfill()
@@ -115,10 +121,23 @@ extension HTTPDataProviderTests {
         return expect
     }
 
+    func test_fetchCreditScore_withEmptyApiURL() {
+        let expect = parameterized_fetchCreditScore_failure(
+            expectationId: "test_fetchCreditScore_withEmptyApiURL", apiURL: nil, error: nil
+        ) { creditScore, error in
+            // Then
+            XCTAssertNil(creditScore)
+            XCTAssertEqual(
+                NetworkLayerError.cantBuildServiceURL.identifier,
+                error?.identifier
+            )
+        }
+        wait(for: [expect], timeout: 0.1)
+    }
+
     func test_fetchCreditScore_withNetworkFailure() {
         let expect = parameterized_fetchCreditScore_failure(
-            expectationId: "test_fetchCreditScore_withNetworkFailure",
-            error: TestError.failingCase
+            expectationId: "test_fetchCreditScore_withNetworkFailure", error: TestError.failingCase
         ) { creditScore, error in
             // Then
             XCTAssertNil(creditScore)
@@ -132,8 +151,7 @@ extension HTTPDataProviderTests {
 
     func test_fetchCreditScore_withNoDataAndError() {
         let expect = parameterized_fetchCreditScore_failure(
-            expectationId: "test_fetchCreditScore_withNoDataAndError",
-            error: nil
+            expectationId: "test_fetchCreditScore_withNoDataAndError", error: nil
         ) { creditScore, error in
             // Then
             XCTAssertNil(creditScore)

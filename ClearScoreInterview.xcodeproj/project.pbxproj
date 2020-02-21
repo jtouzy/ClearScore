@@ -14,6 +14,9 @@
 		53441B5624001A910042F4AF /* InvalidJsonMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 53441B5524001A910042F4AF /* InvalidJsonMock.json */; };
 		53441B5824001D910042F4AF /* DataLayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B5724001D910042F4AF /* DataLayerError.swift */; };
 		53441B5A24001FA50042F4AF /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B5924001FA50042F4AF /* TestError.swift */; };
+		53441B5F240024270042F4AF /* AppEnvironmentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B5E240024270042F4AF /* AppEnvironmentProvider.swift */; };
+		53441B622400250A0042F4AF /* EnvironmentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B612400250A0042F4AF /* EnvironmentProvider.swift */; };
+		53441B64240027D70042F4AF /* HTTPDataProviderTests+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B63240027D70042F4AF /* HTTPDataProviderTests+Mocks.swift */; };
 		53F2BC97240004D0005D0433 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC96240004D0005D0433 /* AppDelegate.swift */; };
 		53F2BC99240004D0005D0433 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC98240004D0005D0433 /* SceneDelegate.swift */; };
 		53F2BC9B240004D0005D0433 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC9A240004D0005D0433 /* ViewController.swift */; };
@@ -48,6 +51,11 @@
 		53441B5524001A910042F4AF /* InvalidJsonMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InvalidJsonMock.json; sourceTree = "<group>"; };
 		53441B5724001D910042F4AF /* DataLayerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLayerError.swift; sourceTree = "<group>"; };
 		53441B5924001FA50042F4AF /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
+		53441B5C2400231C0042F4AF /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		53441B5D2400232D0042F4AF /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
+		53441B5E240024270042F4AF /* AppEnvironmentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironmentProvider.swift; sourceTree = "<group>"; };
+		53441B612400250A0042F4AF /* EnvironmentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentProvider.swift; sourceTree = "<group>"; };
+		53441B63240027D70042F4AF /* HTTPDataProviderTests+Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPDataProviderTests+Mocks.swift"; sourceTree = "<group>"; };
 		53F2BC93240004D0005D0433 /* ClearScoreInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScoreInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F2BC96240004D0005D0433 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53F2BC98240004D0005D0433 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +114,25 @@
 			path = __TestData;
 			sourceTree = "<group>";
 		};
+		53441B5B240022F50042F4AF /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				53441B5E240024270042F4AF /* AppEnvironmentProvider.swift */,
+				53441B612400250A0042F4AF /* EnvironmentProvider.swift */,
+				53441B602400243A0042F4AF /* Configs */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		53441B602400243A0042F4AF /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				53441B5C2400231C0042F4AF /* Development.xcconfig */,
+				53441B5D2400232D0042F4AF /* Production.xcconfig */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
 		53F2BC8A240004D0005D0433 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +160,7 @@
 				53F2BC9A240004D0005D0433 /* ViewController.swift */,
 				53F2BCBB2400081F005D0433 /* Data */,
 				53F2BCBF24000878005D0433 /* Entities */,
+				53441B5B240022F50042F4AF /* Environment */,
 				53F2BCC624000ADF005D0433 /* Errors */,
 				53F2BCCC24000F12005D0433 /* Extensions */,
 				53F2BCB8240004F2005D0433 /* Modules */,
@@ -233,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				53F2BCD124000FC9005D0433 /* HTTPDataProviderTests.swift */,
+				53441B63240027D70042F4AF /* HTTPDataProviderTests+Mocks.swift */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -342,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53F2BCC3240008B3005D0433 /* CreditReportInfo.swift in Sources */,
+				53441B5F240024270042F4AF /* AppEnvironmentProvider.swift in Sources */,
 				53441B5824001D910042F4AF /* DataLayerError.swift in Sources */,
 				53F2BC9B240004D0005D0433 /* ViewController.swift in Sources */,
 				53F2BC97240004D0005D0433 /* AppDelegate.swift in Sources */,
@@ -351,6 +381,7 @@
 				53F2BCCE24000F21005D0433 /* URLSession+extensions.swift in Sources */,
 				53F2BCC524000A4A005D0433 /* HTTPDataProvider.swift in Sources */,
 				53F2BCBD2400082F005D0433 /* DataProvider.swift in Sources */,
+				53441B622400250A0042F4AF /* EnvironmentProvider.swift in Sources */,
 				53F2BC99240004D0005D0433 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +394,7 @@
 				53441B5A24001FA50042F4AF /* TestError.swift in Sources */,
 				53441B52240015330042F4AF /* JSONDecoder+extensions.swift in Sources */,
 				53441B4C240011BD0042F4AF /* CallStatus.swift in Sources */,
+				53441B64240027D70042F4AF /* HTTPDataProviderTests+Mocks.swift in Sources */,
 				53441B542400182E0042F4AF /* Bundle+extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,6 +431,7 @@
 /* Begin XCBuildConfiguration section */
 		53F2BCB0240004D6005D0433 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53441B5C2400231C0042F4AF /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -459,6 +492,7 @@
 		};
 		53F2BCB1240004D6005D0433 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53441B5D2400232D0042F4AF /* Production.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

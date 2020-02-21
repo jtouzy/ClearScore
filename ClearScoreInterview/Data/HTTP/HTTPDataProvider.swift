@@ -8,9 +8,13 @@
 
 import Foundation
 
+enum HTTPRoute: String {
+    case fetchCreditScore = "mockcredit/values"
+}
+
 class HTTPDataProvider {
-    static let url = "https://5lfoiyb0b3.execute-api.us-west-2.amazonaws.com/prod/mockcredit/values"
     lazy var httpInvoker: HTTPInvoker = URLSession.shared
+    lazy var environmentProvider: EnvironmentProvider = AppEnvironmentProvider.shared
 }
 
 //
@@ -20,11 +24,11 @@ extension HTTPDataProvider: DataProvider {
     typealias FetchCreditScoreHandler = (CreditScore?, DataLayerError?) -> Void
 
     func fetchCreditScore(completion resultHandler: @escaping FetchCreditScoreHandler) {
-        guard let url = URL(string: HTTPDataProvider.url) else {
+        guard let request = buildURLRequest(for: .fetchCreditScore) else {
             resultHandler(nil, NetworkLayerError.cantBuildServiceURL)
             return
         }
-        httpInvoker.call(request: URLRequest(url: url)) { [weak self] data, response, error in
+        httpInvoker.call(request: request) { [weak self] data, response, error in
             guard let self = self else { return }
             if let data = data {
                 self.processSuccessResponse(from: data, completion: resultHandler)
@@ -40,6 +44,16 @@ extension HTTPDataProvider: DataProvider {
 // Methods are generic, for handling future API calls.
 //
 extension HTTPDataProvider {
+    private func buildURLRequest(for route: HTTPRoute) -> URLRequest? {
+        guard
+            let baseUrl = environmentProvider.apiURL,
+            let url = URL(string: baseUrl)?.appendingPathComponent(route.rawValue)
+        else {
+            return nil
+        }
+        return URLRequest(url: url)
+    }
+
     private func processSuccessResponse<T>(
         from data: Data, completion resultHandler: @escaping (T?, DataLayerError?) -> Void
     ) where T: Decodable {
