@@ -6,4 +6,4 @@
 //  Copyright © 2020 jtouzy. All rights reserved.
 //
 
-API_URL = https://5lfoiyb0b3.execute-api.us-west-2.amazonaws.com/prod
+API_URL = https:/$()/5lfoiyb0b3.execute-api.us-west-2.amazonaws.com/prod
