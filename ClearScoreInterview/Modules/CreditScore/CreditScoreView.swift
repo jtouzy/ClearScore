@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CreditScoreView.swift
 //  ClearScoreInterview
 //
 //  Created by Jérémy TOUZY on 21/02/2020.
@@ -8,19 +8,24 @@
 
 import UIKit
 
+protocol CreditScoreView: class {
+    func setLoadingState()
+    func setScoreState(_ model: CreditScoreModelUI)
+}
+
 private struct Specs {
     static let containerCircleRadius: CGFloat = UIScreen.main.bounds.size.width / 3
     static let containerCircleBorderColor: UIColor = .black
     static let containerCircleBorderWidth: CGFloat = 1
     static let scoreCircleRadius: CGFloat = containerCircleRadius - 10
-    static let scoreCircleBorderColor: UIColor = .red
+    static let scoreCircleBorderColor: UIColor = .primary
     static let scoreCircleBorderWidth: CGFloat = 4
     static let hideActivityIndicatorAnimationDuration: TimeInterval = 0.5
     static let drawCirclesAnimationDuration: TimeInterval = 0.5
-    static let drawLabelsAndCircleAnimationDuration: TimeInterval = 0.5
+    static let drawLabelsAnimationDuration: TimeInterval = 0.5
 }
 
-class ViewController: UIViewController {
+class CreditScoreViewController: UIViewController {
     @IBOutlet weak var presentationLabel: UILabel! {
         didSet { presentationLabel.isHidden = true }
     }
@@ -34,44 +39,46 @@ class ViewController: UIViewController {
         didSet { activityIndicator.isHidden = true }
     }
 
+    var presenter: CreditScorePresenter?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setLoadingState()
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
-            self.setScoreState(score: 200, maxScore: 700)
-        })
+        presenter?.didLoad()
     }
 }
 
-extension ViewController {
+extension CreditScoreViewController: CreditScoreView {
     func setLoadingState() {
         activityIndicator.isHidden = false
     }
 
-    func setScoreState(score: Int, maxScore: Int) {
-        // NOTE: First animation: Hide activity indicator
-        UIView.animate(withDuration: Specs.hideActivityIndicatorAnimationDuration,
-                       animations: { [weak self] in
-            self?.activityIndicator.alpha = 0
-        }, completion: { [weak self] _ in
-            guard let self = self else { return }
-            self.activityIndicator.isHidden = true
-            // NOTE: Second animation: Draw score circle + Draw black container circle
-            self.drawContainerCircle()
-            self.drawScoreCircleWithAnimation()
-            // NOTE: Third animation: Draw labels
-            UIView.animate(withDuration: Specs.drawLabelsAndCircleAnimationDuration,
-                           delay: Specs.drawCirclesAnimationDuration,
-                           animations: {
-                self.presentationLabel.isHidden = false
-                self.scoreLabel.isHidden = false
-                self.maximumScoreLabel.isHidden = false
+    func setScoreState(_ model: CreditScoreModelUI) {
+        DispatchQueue.main.async { [weak self] in
+            // NOTE: First animation: Hide activity indicator
+            UIView.animate(withDuration: Specs.hideActivityIndicatorAnimationDuration, animations: {
+                self?.activityIndicator.alpha = 0
+            }, completion: { [weak self] _ in
+                guard let self = self else { return }
+                self.activityIndicator.isHidden = true
+                // NOTE: Second animation: Draw score circle + Draw black container circle
+                self.drawContainerCircle()
+                self.drawScoreCircleWithAnimation(percentage: model.percentage)
+                // NOTE: Third animation: Draw labels
+                UIView.animate(withDuration: Specs.drawLabelsAnimationDuration,
+                               delay: Specs.drawCirclesAnimationDuration,
+                               animations: {
+                    self.presentationLabel.isHidden = false
+                    self.scoreLabel.isHidden = false
+                    self.scoreLabel.text = model.score
+                    self.maximumScoreLabel.isHidden = false
+                    self.maximumScoreLabel.text = model.maxScore
+                })
             })
-        })
+        }
     }
 }
 
-extension ViewController {
+extension CreditScoreViewController {
     private func drawContainerCircle() {
         let shapeLayer = view.drawCircle(
             radius: Specs.containerCircleRadius,
@@ -89,7 +96,7 @@ extension ViewController {
         shapeLayer.add(basicAnimation, forKey: "drawContainerCircleAnimation")
     }
 
-    private func drawScoreCircleWithAnimation() {
+    private func drawScoreCircleWithAnimation(percentage: Double) {
         let shapeLayer = self.view.drawCircle(
             radius: Specs.scoreCircleRadius,
             fillColor: self.view.backgroundColor,
@@ -100,7 +107,7 @@ extension ViewController {
         shapeLayer.strokeEnd = 0
         let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         basicAnimation.duration = Specs.drawCirclesAnimationDuration
-        basicAnimation.toValue = 0.7
+        basicAnimation.toValue = percentage / 100
         basicAnimation.fillMode = CAMediaTimingFillMode.forwards
         basicAnimation.isRemovedOnCompletion = false
         shapeLayer.add(basicAnimation, forKey: "drawScoreCircleAnimation")

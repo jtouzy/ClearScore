@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  UIColor+extensions.swift
 //  ClearScoreInterview
 //
 //  Created by Jérémy TOUZY on 21/02/2020.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+extension UIColor {
+    static var primary: UIColor { UIColor(named: "Primary") ?? .clear }
 }

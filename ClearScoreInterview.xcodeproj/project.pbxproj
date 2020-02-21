@@ -18,9 +18,15 @@
 		53441B622400250A0042F4AF /* EnvironmentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B612400250A0042F4AF /* EnvironmentProvider.swift */; };
 		53441B64240027D70042F4AF /* HTTPDataProviderTests+Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B63240027D70042F4AF /* HTTPDataProviderTests+Mocks.swift */; };
 		53441B662400315C0042F4AF /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B652400315C0042F4AF /* UIView+extensions.swift */; };
+		53441B6C240045BF0042F4AF /* CreditScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B6B240045BF0042F4AF /* CreditScoreView.swift */; };
+		53441B70240046600042F4AF /* CreditScorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B6F240046600042F4AF /* CreditScorePresenter.swift */; };
+		53441B72240047390042F4AF /* CreditScoreAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B71240047390042F4AF /* CreditScoreAssembler.swift */; };
+		53441B74240047600042F4AF /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B73240047600042F4AF /* UIViewController+extensions.swift */; };
+		53441B77240047CA0042F4AF /* UIIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B76240047CA0042F4AF /* UIIdentifiable.swift */; };
+		53441B7924005A150042F4AF /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B7824005A150042F4AF /* UIColor+extensions.swift */; };
+		53441B7B24005BAC0042F4AF /* CreditScoreModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B7A24005BAC0042F4AF /* CreditScoreModels.swift */; };
 		53F2BC97240004D0005D0433 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC96240004D0005D0433 /* AppDelegate.swift */; };
 		53F2BC99240004D0005D0433 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC98240004D0005D0433 /* SceneDelegate.swift */; };
-		53F2BC9B240004D0005D0433 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC9A240004D0005D0433 /* ViewController.swift */; };
 		53F2BC9E240004D0005D0433 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F2BC9C240004D0005D0433 /* Main.storyboard */; };
 		53F2BCA0240004D5005D0433 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53F2BC9F240004D5005D0433 /* Assets.xcassets */; };
 		53F2BCA3240004D5005D0433 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F2BCA1240004D5005D0433 /* LaunchScreen.storyboard */; };
@@ -58,10 +64,16 @@
 		53441B612400250A0042F4AF /* EnvironmentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentProvider.swift; sourceTree = "<group>"; };
 		53441B63240027D70042F4AF /* HTTPDataProviderTests+Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPDataProviderTests+Mocks.swift"; sourceTree = "<group>"; };
 		53441B652400315C0042F4AF /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
+		53441B6B240045BF0042F4AF /* CreditScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreView.swift; sourceTree = "<group>"; };
+		53441B6F240046600042F4AF /* CreditScorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScorePresenter.swift; sourceTree = "<group>"; };
+		53441B71240047390042F4AF /* CreditScoreAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreAssembler.swift; sourceTree = "<group>"; };
+		53441B73240047600042F4AF /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
+		53441B76240047CA0042F4AF /* UIIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIIdentifiable.swift; sourceTree = "<group>"; };
+		53441B7824005A150042F4AF /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
+		53441B7A24005BAC0042F4AF /* CreditScoreModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScoreModels.swift; sourceTree = "<group>"; };
 		53F2BC93240004D0005D0433 /* ClearScoreInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScoreInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F2BC96240004D0005D0433 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53F2BC98240004D0005D0433 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		53F2BC9A240004D0005D0433 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		53F2BC9D240004D0005D0433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		53F2BC9F240004D5005D0433 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53F2BCA2240004D5005D0433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -135,6 +147,25 @@
 			path = Configs;
 			sourceTree = "<group>";
 		};
+		53441B6A240045A60042F4AF /* CreditScore */ = {
+			isa = PBXGroup;
+			children = (
+				53441B71240047390042F4AF /* CreditScoreAssembler.swift */,
+				53441B7A24005BAC0042F4AF /* CreditScoreModels.swift */,
+				53441B6F240046600042F4AF /* CreditScorePresenter.swift */,
+				53441B6B240045BF0042F4AF /* CreditScoreView.swift */,
+			);
+			path = CreditScore;
+			sourceTree = "<group>";
+		};
+		53441B75240047BD0042F4AF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				53441B76240047CA0042F4AF /* UIIdentifiable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		53F2BC8A240004D0005D0433 = {
 			isa = PBXGroup;
 			children = (
@@ -159,13 +190,13 @@
 				53F2BCA4240004D5005D0433 /* Info.plist */,
 				53F2BC96240004D0005D0433 /* AppDelegate.swift */,
 				53F2BC98240004D0005D0433 /* SceneDelegate.swift */,
-				53F2BC9A240004D0005D0433 /* ViewController.swift */,
 				53F2BCBB2400081F005D0433 /* Data */,
 				53F2BCBF24000878005D0433 /* Entities */,
 				53441B5B240022F50042F4AF /* Environment */,
 				53F2BCC624000ADF005D0433 /* Errors */,
 				53F2BCCC24000F12005D0433 /* Extensions */,
 				53F2BCB8240004F2005D0433 /* Modules */,
+				53441B75240047BD0042F4AF /* Protocols */,
 				53F2BCB9240004FA005D0433 /* Resources */,
 				53F2BCBA24000561005D0433 /* Storyboards */,
 			);
@@ -186,6 +217,7 @@
 		53F2BCB8240004F2005D0433 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				53441B6A240045A60042F4AF /* CreditScore */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -246,7 +278,9 @@
 		53F2BCCC24000F12005D0433 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				53441B7824005A150042F4AF /* UIColor+extensions.swift */,
 				53441B652400315C0042F4AF /* UIView+extensions.swift */,
+				53441B73240047600042F4AF /* UIViewController+extensions.swift */,
 				53F2BCCD24000F21005D0433 /* URLSession+extensions.swift */,
 			);
 			path = Extensions;
@@ -374,18 +408,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				53441B662400315C0042F4AF /* UIView+extensions.swift in Sources */,
+				53441B7B24005BAC0042F4AF /* CreditScoreModels.swift in Sources */,
 				53F2BCC3240008B3005D0433 /* CreditReportInfo.swift in Sources */,
 				53441B5F240024270042F4AF /* AppEnvironmentProvider.swift in Sources */,
 				53441B5824001D910042F4AF /* DataLayerError.swift in Sources */,
-				53F2BC9B240004D0005D0433 /* ViewController.swift in Sources */,
 				53F2BC97240004D0005D0433 /* AppDelegate.swift in Sources */,
+				53441B70240046600042F4AF /* CreditScorePresenter.swift in Sources */,
+				53441B72240047390042F4AF /* CreditScoreAssembler.swift in Sources */,
 				53F2BCC824000B02005D0433 /* NetworkLayerError.swift in Sources */,
+				53441B6C240045BF0042F4AF /* CreditScoreView.swift in Sources */,
 				53F2BCCB24000EDB005D0433 /* HTTPInvoker.swift in Sources */,
 				53F2BCC12400088F005D0433 /* CreditScore.swift in Sources */,
+				53441B7924005A150042F4AF /* UIColor+extensions.swift in Sources */,
 				53F2BCCE24000F21005D0433 /* URLSession+extensions.swift in Sources */,
 				53F2BCC524000A4A005D0433 /* HTTPDataProvider.swift in Sources */,
 				53F2BCBD2400082F005D0433 /* DataProvider.swift in Sources */,
 				53441B622400250A0042F4AF /* EnvironmentProvider.swift in Sources */,
+				53441B74240047600042F4AF /* UIViewController+extensions.swift in Sources */,
+				53441B77240047CA0042F4AF /* UIIdentifiable.swift in Sources */,
 				53F2BC99240004D0005D0433 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
