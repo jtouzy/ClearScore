@@ -7,13 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53441B4C240011BD0042F4AF /* CallStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B4B240011BD0042F4AF /* CallStatus.swift */; };
+		53441B50240015130042F4AF /* SuccessMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 53441B4F240015130042F4AF /* SuccessMock.json */; };
+		53441B52240015330042F4AF /* JSONDecoder+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B51240015330042F4AF /* JSONDecoder+extensions.swift */; };
+		53441B542400182E0042F4AF /* Bundle+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B532400182E0042F4AF /* Bundle+extensions.swift */; };
+		53441B5624001A910042F4AF /* InvalidJsonMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 53441B5524001A910042F4AF /* InvalidJsonMock.json */; };
+		53441B5824001D910042F4AF /* DataLayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B5724001D910042F4AF /* DataLayerError.swift */; };
+		53441B5A24001FA50042F4AF /* TestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53441B5924001FA50042F4AF /* TestError.swift */; };
 		53F2BC97240004D0005D0433 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC96240004D0005D0433 /* AppDelegate.swift */; };
 		53F2BC99240004D0005D0433 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC98240004D0005D0433 /* SceneDelegate.swift */; };
 		53F2BC9B240004D0005D0433 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC9A240004D0005D0433 /* ViewController.swift */; };
 		53F2BC9E240004D0005D0433 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F2BC9C240004D0005D0433 /* Main.storyboard */; };
 		53F2BCA0240004D5005D0433 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53F2BC9F240004D5005D0433 /* Assets.xcassets */; };
 		53F2BCA3240004D5005D0433 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F2BCA1240004D5005D0433 /* LaunchScreen.storyboard */; };
-		53F2BCAE240004D6005D0433 /* ClearScoreInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BCAD240004D6005D0433 /* ClearScoreInterviewTests.swift */; };
+		53F2BCBD2400082F005D0433 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BCBC2400082F005D0433 /* DataProvider.swift */; };
+		53F2BCC12400088F005D0433 /* CreditScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BCC02400088F005D0433 /* CreditScore.swift */; };
+		53F2BCC3240008B3005D0433 /* CreditReportInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BCC2240008B3005D0433 /* CreditReportInfo.swift */; };
+		53F2BCC524000A4A005D0433 /* HTTPDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BCC424000A4A005D0433 /* HTTPDataProvider.swift */; };
+		53F2BCC824000B02005D0433 /* NetworkLayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BCC724000B02005D0433 /* NetworkLayerError.swift */; };
+		53F2BCCB24000EDB005D0433 /* HTTPInvoker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BCCA24000EDB005D0433 /* HTTPInvoker.swift */; };
+		53F2BCCE24000F21005D0433 /* URLSession+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BCCD24000F21005D0433 /* URLSession+extensions.swift */; };
+		53F2BCD224000FC9005D0433 /* HTTPDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BCD124000FC9005D0433 /* HTTPDataProviderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		53441B4B240011BD0042F4AF /* CallStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallStatus.swift; sourceTree = "<group>"; };
+		53441B4F240015130042F4AF /* SuccessMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SuccessMock.json; sourceTree = "<group>"; };
+		53441B51240015330042F4AF /* JSONDecoder+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+extensions.swift"; sourceTree = "<group>"; };
+		53441B532400182E0042F4AF /* Bundle+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extensions.swift"; sourceTree = "<group>"; };
+		53441B5524001A910042F4AF /* InvalidJsonMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InvalidJsonMock.json; sourceTree = "<group>"; };
+		53441B5724001D910042F4AF /* DataLayerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLayerError.swift; sourceTree = "<group>"; };
+		53441B5924001FA50042F4AF /* TestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestError.swift; sourceTree = "<group>"; };
 		53F2BC93240004D0005D0433 /* ClearScoreInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScoreInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F2BC96240004D0005D0433 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53F2BC98240004D0005D0433 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,8 +57,15 @@
 		53F2BCA2240004D5005D0433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53F2BCA4240004D5005D0433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53F2BCA9240004D6005D0433 /* ClearScoreInterviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClearScoreInterviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		53F2BCAD240004D6005D0433 /* ClearScoreInterviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearScoreInterviewTests.swift; sourceTree = "<group>"; };
 		53F2BCAF240004D6005D0433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53F2BCBC2400082F005D0433 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		53F2BCC02400088F005D0433 /* CreditScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditScore.swift; sourceTree = "<group>"; };
+		53F2BCC2240008B3005D0433 /* CreditReportInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditReportInfo.swift; sourceTree = "<group>"; };
+		53F2BCC424000A4A005D0433 /* HTTPDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDataProvider.swift; sourceTree = "<group>"; };
+		53F2BCC724000B02005D0433 /* NetworkLayerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayerError.swift; sourceTree = "<group>"; };
+		53F2BCCA24000EDB005D0433 /* HTTPInvoker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPInvoker.swift; sourceTree = "<group>"; };
+		53F2BCCD24000F21005D0433 /* URLSession+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+extensions.swift"; sourceTree = "<group>"; };
+		53F2BCD124000FC9005D0433 /* HTTPDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDataProviderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +86,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53441B4A2400119E0042F4AF /* __TestUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				53441B532400182E0042F4AF /* Bundle+extensions.swift */,
+				53441B4B240011BD0042F4AF /* CallStatus.swift */,
+				53441B51240015330042F4AF /* JSONDecoder+extensions.swift */,
+				53441B5924001FA50042F4AF /* TestError.swift */,
+			);
+			path = __TestUtilities;
+			sourceTree = "<group>";
+		};
+		53441B4E240014F70042F4AF /* __TestData */ = {
+			isa = PBXGroup;
+			children = (
+				53441B5524001A910042F4AF /* InvalidJsonMock.json */,
+				53441B4F240015130042F4AF /* SuccessMock.json */,
+			);
+			path = __TestData;
+			sourceTree = "<group>";
+		};
 		53F2BC8A240004D0005D0433 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +131,10 @@
 				53F2BC96240004D0005D0433 /* AppDelegate.swift */,
 				53F2BC98240004D0005D0433 /* SceneDelegate.swift */,
 				53F2BC9A240004D0005D0433 /* ViewController.swift */,
+				53F2BCBB2400081F005D0433 /* Data */,
+				53F2BCBF24000878005D0433 /* Entities */,
+				53F2BCC624000ADF005D0433 /* Errors */,
+				53F2BCCC24000F12005D0433 /* Extensions */,
 				53F2BCB8240004F2005D0433 /* Modules */,
 				53F2BCB9240004FA005D0433 /* Resources */,
 				53F2BCBA24000561005D0433 /* Storyboards */,
@@ -93,8 +145,10 @@
 		53F2BCAC240004D6005D0433 /* ClearScoreInterviewTests */ = {
 			isa = PBXGroup;
 			children = (
-				53F2BCAD240004D6005D0433 /* ClearScoreInterviewTests.swift */,
 				53F2BCAF240004D6005D0433 /* Info.plist */,
+				53441B4E240014F70042F4AF /* __TestData */,
+				53441B4A2400119E0042F4AF /* __TestUtilities */,
+				53F2BCCF24000FB3005D0433 /* Data */,
 			);
 			path = ClearScoreInterviewTests;
 			sourceTree = "<group>";
@@ -121,6 +175,66 @@
 				53F2BC9C240004D0005D0433 /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		53F2BCBB2400081F005D0433 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				53F2BCBC2400082F005D0433 /* DataProvider.swift */,
+				53F2BCC924000EB0005D0433 /* HTTP */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		53F2BCBF24000878005D0433 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				53F2BCC2240008B3005D0433 /* CreditReportInfo.swift */,
+				53F2BCC02400088F005D0433 /* CreditScore.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		53F2BCC624000ADF005D0433 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				53441B5724001D910042F4AF /* DataLayerError.swift */,
+				53F2BCC724000B02005D0433 /* NetworkLayerError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		53F2BCC924000EB0005D0433 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				53F2BCC424000A4A005D0433 /* HTTPDataProvider.swift */,
+				53F2BCCA24000EDB005D0433 /* HTTPInvoker.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		53F2BCCC24000F12005D0433 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				53F2BCCD24000F21005D0433 /* URLSession+extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		53F2BCCF24000FB3005D0433 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				53F2BCD024000FB9005D0433 /* HTTP */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		53F2BCD024000FB9005D0433 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				53F2BCD124000FC9005D0433 /* HTTPDataProviderTests.swift */,
+			);
+			path = HTTP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +290,7 @@
 					};
 					53F2BCA8240004D6005D0433 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = 53F2BC92240004D0005D0433;
 					};
 				};
@@ -214,6 +329,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53441B50240015130042F4AF /* SuccessMock.json in Resources */,
+				53441B5624001A910042F4AF /* InvalidJsonMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,8 +341,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53F2BCC3240008B3005D0433 /* CreditReportInfo.swift in Sources */,
+				53441B5824001D910042F4AF /* DataLayerError.swift in Sources */,
 				53F2BC9B240004D0005D0433 /* ViewController.swift in Sources */,
 				53F2BC97240004D0005D0433 /* AppDelegate.swift in Sources */,
+				53F2BCC824000B02005D0433 /* NetworkLayerError.swift in Sources */,
+				53F2BCCB24000EDB005D0433 /* HTTPInvoker.swift in Sources */,
+				53F2BCC12400088F005D0433 /* CreditScore.swift in Sources */,
+				53F2BCCE24000F21005D0433 /* URLSession+extensions.swift in Sources */,
+				53F2BCC524000A4A005D0433 /* HTTPDataProvider.swift in Sources */,
+				53F2BCBD2400082F005D0433 /* DataProvider.swift in Sources */,
 				53F2BC99240004D0005D0433 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,7 +359,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53F2BCAE240004D6005D0433 /* ClearScoreInterviewTests.swift in Sources */,
+				53F2BCD224000FC9005D0433 /* HTTPDataProviderTests.swift in Sources */,
+				53441B5A24001FA50042F4AF /* TestError.swift in Sources */,
+				53441B52240015330042F4AF /* JSONDecoder+extensions.swift in Sources */,
+				53441B4C240011BD0042F4AF /* CallStatus.swift in Sources */,
+				53441B542400182E0042F4AF /* Bundle+extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +550,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ClearScoreInterviewTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -431,6 +561,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jtouzy.ClearScoreInterviewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClearScoreInterview.app/ClearScoreInterview";
@@ -442,6 +573,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ClearScoreInterviewTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
