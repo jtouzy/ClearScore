@@ -8,3 +8,8 @@
 
 "credit_score_presentation" = "Votre score est";
 "credit_score_maximum" = "sur %@";
+
+"error_cant_build_service_url" = "Impossible de construire l'URL du service";
+"error_cant_deserialize" = "Impossible de désérialiser la réponse JSON";
+"error_network_failure" = "Erreur réseau durant l'appel au service";
+"error_no_data" = "Aucune donnée retournée par le service";

@@ -24,4 +24,17 @@ enum NetworkLayerError: DataLayerError {
             return "noDataFetched"
         }
     }
+
+    var localizedMessage: String {
+        switch self {
+        case .cantBuildServiceURL:
+            return "error_cant_build_service_url".localized
+        case .cantDeserialize(_):
+            return "error_cant_deserialize".localized
+        case .networkFailure(_):
+            return "error_network_failure".localized
+        case .noDataFetched:
+            return "error_no_data".localized
+        }
+    }
 }

@@ -35,4 +35,14 @@ extension UIView {
         layer.insertSublayer(shapeLayer, at: layerIndex)
         return shapeLayer
     }
+
+    func show() {
+        isHidden = false
+        alpha = 1
+    }
+
+    func hide() {
+        alpha = 0
+        isHidden = true
+    }
 }

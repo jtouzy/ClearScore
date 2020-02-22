@@ -10,4 +10,5 @@ import Foundation
 
 protocol DataLayerError: Error {
     var identifier: String { get }
+    var localizedMessage: String { get }
 }

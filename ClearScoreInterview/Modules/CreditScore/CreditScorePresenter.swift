@@ -10,6 +10,7 @@ import UIKit
 
 protocol CreditScorePresenter {
     func didLoad()
+    func didTapRetry()
 }
 
 class CreditScorePresenterImpl {
@@ -23,6 +24,16 @@ class CreditScorePresenterImpl {
 
 extension CreditScorePresenterImpl: CreditScorePresenter {
     func didLoad() {
+        fetchCreditScoreWithLoader()
+    }
+
+    func didTapRetry() {
+        fetchCreditScoreWithLoader()
+    }
+}
+
+extension CreditScorePresenterImpl {
+    private func fetchCreditScoreWithLoader() {
         view?.setLoadingState()
         dataProvider.fetchCreditScore { [weak self] creditScore, error in
             guard let self = self else { return }
@@ -34,6 +45,8 @@ extension CreditScorePresenterImpl: CreditScorePresenter {
                     maxScore: "credit_score_maximum".localizedWith("\(maxScore)"),
                     percentage: Double((score * 100) / maxScore)
                 ))
+            } else if let error = error {
+                self.view?.setErrorState(error.localizedMessage)
             }
         }
     }

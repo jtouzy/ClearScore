@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7kz-Vj-QWg">
-                                <rect key="frame" x="16" y="372" width="382" height="162"/>
+                                <rect key="frame" x="16" y="329" width="382" height="248.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your credit score is" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkc-kQ-cVN">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
@@ -40,6 +40,25 @@
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="4XJ-lr-g6I">
                                         <rect key="frame" x="0.0" y="125" width="382" height="37"/>
                                     </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ez-UD-ojh">
+                                        <rect key="frame" x="0.0" y="170" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwd-02-DXO">
+                                        <rect key="frame" x="0.0" y="198.5" width="382" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="NYE-BN-Egz"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="arrow.clockwise" catalog="system">
+                                            <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="retryClickHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="roD-ed-S4c"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -53,8 +72,10 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="4XJ-lr-g6I" id="3WY-Cz-oZI"/>
+                        <outlet property="errorLabel" destination="0ez-UD-ojh" id="dSf-eq-bZQ"/>
                         <outlet property="maximumScoreLabel" destination="qHM-w9-7Sl" id="BGb-dd-yvN"/>
                         <outlet property="presentationLabel" destination="Bkc-kQ-cVN" id="QEo-nr-hI0"/>
+                        <outlet property="retryButton" destination="Hwd-02-DXO" id="THJ-Q4-lfP"/>
                         <outlet property="scoreLabel" destination="v3W-J8-S8i" id="YCN-DB-wLH"/>
                     </connections>
                 </viewController>
@@ -64,6 +85,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="56" height="64"/>
         <namedColor name="Primary">
             <color red="0.9570000171661377" green="0.74900001287460327" blue="0.43900001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

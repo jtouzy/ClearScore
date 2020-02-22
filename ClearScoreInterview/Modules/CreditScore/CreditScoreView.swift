@@ -11,6 +11,7 @@ import UIKit
 protocol CreditScoreView: class {
     func setLoadingState()
     func setScoreState(_ model: CreditScoreModelUI)
+    func setErrorState(_ message: String)
 }
 
 struct CreditScoreViewControllerSpecs {
@@ -20,6 +21,7 @@ struct CreditScoreViewControllerSpecs {
     static let scoreCircleRadius: CGFloat = containerCircleRadius - 10
     static let scoreCircleBorderColor: UIColor? = .primary
     static let scoreCircleBorderWidth: CGFloat = 4
+    static let showActivityIndicatorAnimationDuration: TimeInterval = 0.2
     static let hideActivityIndicatorAnimationDuration: TimeInterval = 0.5
     static let drawCirclesAnimationDuration: TimeInterval = 0.5
     static let drawLabelsAnimationDuration: TimeInterval = 0.5
@@ -30,18 +32,24 @@ private typealias Specs = CreditScoreViewControllerSpecs
 class CreditScoreViewController: UIViewController {
     @IBOutlet weak var presentationLabel: UILabel! {
         didSet {
-            presentationLabel.isHidden = true
+            presentationLabel.hide()
             presentationLabel.text = "credit_score_presentation".localized
         }
     }
     @IBOutlet weak var scoreLabel: UILabel! {
-        didSet { scoreLabel.isHidden = true }
+        didSet { scoreLabel.hide() }
     }
     @IBOutlet weak var maximumScoreLabel: UILabel! {
-        didSet { maximumScoreLabel.isHidden = true }
+        didSet { maximumScoreLabel.hide() }
     }
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView! {
-        didSet { activityIndicator.isHidden = true }
+        didSet { activityIndicator.hide() }
+    }
+    @IBOutlet weak var errorLabel: UILabel! {
+        didSet { errorLabel.hide() }
+    }
+    @IBOutlet weak var retryButton: UIButton! {
+        didSet { retryButton.hide() }
     }
 
     var presenter: CreditScorePresenter?
@@ -50,40 +58,70 @@ class CreditScoreViewController: UIViewController {
         super.viewDidLoad()
         presenter?.didLoad()
     }
+
+    @IBAction func retryClickHandler(_ sender: UIButton) {
+        presenter?.didTapRetry()
+    }
 }
 
 extension CreditScoreViewController: CreditScoreView {
     func setLoadingState() {
-        activityIndicator.isHidden = false
+        errorLabel.hide()
+        retryButton.hide()
+        // NOTE: Animation to show activityIndicator and hide errors if present
+        UIView.animate(withDuration: Specs.showActivityIndicatorAnimationDuration,
+                       animations: { [weak self] in
+            self?.activityIndicator.show()
+        })
     }
 
     func setScoreState(_ model: CreditScoreModelUI) {
-        DispatchQueue.main.async { [weak self] in
-            // NOTE: First animation: Hide activity indicator
-            UIView.animate(withDuration: Specs.hideActivityIndicatorAnimationDuration, animations: {
-                self?.activityIndicator.alpha = 0
-            }, completion: { [weak self] _ in
-                guard let self = self else { return }
-                self.activityIndicator.isHidden = true
-                // NOTE: Second animation: Draw score circle + Draw black container circle
-                self.drawContainerCircle()
-                self.drawScoreCircleWithAnimation(percentage: model.percentage)
-                // NOTE: Third animation: Draw labels
-                UIView.animate(withDuration: Specs.drawLabelsAnimationDuration,
-                               delay: Specs.drawCirclesAnimationDuration,
-                               animations: {
-                    self.presentationLabel.isHidden = false
-                    self.scoreLabel.isHidden = false
-                    self.scoreLabel.text = model.score
-                    self.maximumScoreLabel.isHidden = false
-                    self.maximumScoreLabel.text = model.maxScore
-                })
+        hideActivityIndicatorWithAnimation { [weak self] in
+            guard let self = self else { return }
+            // NOTE: Second animation: Draw score circle + Draw black container circle
+            self.drawContainerCircle()
+            self.drawScoreCircleWithAnimation(percentage: model.percentage)
+            // NOTE: Third animation: Draw labels
+            UIView.animate(withDuration: Specs.drawLabelsAnimationDuration,
+                           delay: Specs.drawCirclesAnimationDuration,
+                           animations: {
+                self.presentationLabel.show()
+                self.scoreLabel.show()
+                self.scoreLabel.text = model.score
+                self.maximumScoreLabel.show()
+                self.maximumScoreLabel.text = model.maxScore
+            })
+        }
+    }
+
+    func setErrorState(_ message: String) {
+        hideActivityIndicatorWithAnimation { [weak self] in
+            guard let self = self else { return }
+            // NOTE: Second animation: Draw error labels
+            UIView.animate(withDuration: Specs.drawLabelsAnimationDuration,
+                           animations: {
+                self.errorLabel.show()
+                self.errorLabel.text = message
+                self.retryButton.show()
             })
         }
     }
 }
 
 extension CreditScoreViewController {
+    private func hideActivityIndicatorWithAnimation(andThen completion: @escaping () -> Void) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            // NOTE: First animation: Hide activity indicator
+            UIView.animate(withDuration: Specs.hideActivityIndicatorAnimationDuration, animations: {
+                self.activityIndicator.alpha = 0
+            }, completion: { _ in
+                self.activityIndicator.isHidden = true
+                completion()
+            })
+        }
+    }
+
     private func drawContainerCircle() {
         let shapeLayer = view.drawCircle(
             radius: Specs.containerCircleRadius,
@@ -102,9 +140,9 @@ extension CreditScoreViewController {
     }
 
     private func drawScoreCircleWithAnimation(percentage: Double) {
-        let shapeLayer = self.view.drawCircle(
+        let shapeLayer = view.drawCircle(
             radius: Specs.scoreCircleRadius,
-            fillColor: self.view.backgroundColor,
+            fillColor: view.backgroundColor,
             borderColor: Specs.scoreCircleBorderColor,
             borderWidth: Specs.scoreCircleBorderWidth,
             layerIndex: 1
