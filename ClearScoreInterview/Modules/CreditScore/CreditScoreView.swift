@@ -15,8 +15,8 @@ protocol CreditScoreView: class {
 
 struct CreditScoreViewControllerSpecs {
     static let containerCircleRadius: CGFloat = UIScreen.main.bounds.size.width / 3
-    static let containerCircleBorderColor: UIColor = .black
     static let containerCircleBorderWidth: CGFloat = 1
+    static let containerCircleBorderColor: UIColor? = .creditScoreContainerCircleBorder
     static let scoreCircleRadius: CGFloat = containerCircleRadius - 10
     static let scoreCircleBorderColor: UIColor? = .primary
     static let scoreCircleBorderWidth: CGFloat = 4

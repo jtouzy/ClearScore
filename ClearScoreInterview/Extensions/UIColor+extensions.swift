@@ -9,5 +9,10 @@
 import UIKit
 
 extension UIColor {
-    static var primary: UIColor? { UIColor(named: "Primary") }
+    static var primary: UIColor? {
+        UIColor(named: "Primary")
+    }
+    static var creditScoreContainerCircleBorder: UIColor? {
+        UIColor(named: "CreditScoreContainerCircleBorder")
+    }
 }
