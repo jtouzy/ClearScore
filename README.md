@@ -1,6 +1,15 @@
-# ClearScoreInterview
+# ClearScore
 
 Demo app for ClearScore iOS Developer interview.
+
+## Quick overview
+
+In the technical test specs, the application should be production ready. Based on that, this demo app :
+* has an AppIcon, and a LaunchScreen icon
+* is localization ready (available for 🇬🇧 & 🇫🇷)
+* is dark-mode ready (colors & images are available in each user interface style)
+* is [multiple-environment ready](#environment)
+* is unit-tested with 99% coverage
 
 ## Project architecture details
 
@@ -23,11 +32,15 @@ The `HTTPInvoker` protocol is here to easily unit test the `HTTPDataProvider` im
 
 ### Entities
 
-Model entities.
+This folder contains model entities, which are all `Codable` instances for handling JSON serialization/deserialization. Based on the given specs, this is not needed to deserialize the full JSON received from the backend API. We only need some informations about the current and maximum credit score.
 
 ### <a name="environment"></a>Environment
 
-Environment management.
+This folder contains resources and classes for environment management (such as backend endpoint URL). 
+
+The `API_URL` variable is defined in each `Development.xcconfig` and `Production.xcconfig` file. Based on the given specs, only one URL is provided, so the same URL is set in each file. It's only for the structure demo.
+
+The `$(API_URL)` variable is set in the Info.plist main-target file, for being retrieved in the `AppEnvironmentProvider`. Same as the DataLayer, a protocol is also available (`EnvironmentProvider`) for easy mocking.
 
 ### Errors
 
@@ -47,8 +60,8 @@ Global reusable protocols.
 
 ### Resources
 
-Application resources (i.e. Assets).
+This folder contains application resources (i.e. Assets).
 
 ### Storyboards
 
-Application storyboards (Main & LaunchScreen).
+This folder contains application storyboards (Main & LaunchScreen).
