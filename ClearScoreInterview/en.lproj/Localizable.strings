@@ -6,6 +6,7 @@
   Copyright © 2020 jtouzy. All rights reserved.
 */
 
+"credit_score_title" = "Dashboard";
 "credit_score_presentation" = "Your credit score is";
 "credit_score_maximum" = "out of %@";
 

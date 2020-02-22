@@ -6,6 +6,7 @@
   Copyright © 2020 jtouzy. All rights reserved.
 */
 
+"credit_score_title" = "Tableau de bord";
 "credit_score_presentation" = "Votre score est";
 "credit_score_maximum" = "sur %@";
 

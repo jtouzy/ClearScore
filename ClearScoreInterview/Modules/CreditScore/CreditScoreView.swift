@@ -30,6 +30,7 @@ struct CreditScoreViewControllerSpecs {
 private typealias Specs = CreditScoreViewControllerSpecs
 
 class CreditScoreViewController: UIViewController {
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var presentationLabel: UILabel! {
         didSet {
             presentationLabel.hide()
@@ -56,6 +57,7 @@ class CreditScoreViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "credit_score_title".localized
         presenter?.didLoad()
     }
 
@@ -124,6 +126,7 @@ extension CreditScoreViewController {
 
     private func drawContainerCircle() {
         let shapeLayer = view.drawCircle(
+            fromCenter: stackView.center,
             radius: Specs.containerCircleRadius,
             fillColor: view.backgroundColor,
             borderColor: Specs.containerCircleBorderColor,
@@ -141,6 +144,7 @@ extension CreditScoreViewController {
 
     private func drawScoreCircleWithAnimation(percentage: Double) {
         let shapeLayer = view.drawCircle(
+            fromCenter: stackView.center,
             radius: Specs.scoreCircleRadius,
             fillColor: view.backgroundColor,
             borderColor: Specs.scoreCircleBorderColor,

@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let firstViewController = CreditScoreAssembler.assemble()
         else { return }
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = firstViewController
+        let navigationController = UINavigationController(rootViewController: firstViewController)
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
         self.window = window
     }
