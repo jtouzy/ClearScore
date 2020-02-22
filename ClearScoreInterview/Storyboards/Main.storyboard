@@ -11,7 +11,7 @@
         <!--Credit Score View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="CreditScoreViewController" id="BYZ-38-t0r" customClass="CreditScoreViewController" customModule="ClearScoreInterview" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreditScoreViewController" id="BYZ-38-t0r" customClass="CreditScoreViewController" customModule="ClearScore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
     </scenes>
     <resources>
         <namedColor name="Primary">
-            <color red="0.95686274509803926" green="0.74901960784313726" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9570000171661377" green="0.74900001287460327" blue="0.43900001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  ClearScoreInterview
+
+  Created by Jérémy TOUZY on 22/02/2020.
+  Copyright © 2020 jtouzy. All rights reserved.
+*/
+
+"credit_score_presentation" = "Votre score est";
+"credit_score_maximum" = "sur %@";

@@ -29,7 +29,10 @@ private typealias Specs = CreditScoreViewControllerSpecs
 
 class CreditScoreViewController: UIViewController {
     @IBOutlet weak var presentationLabel: UILabel! {
-        didSet { presentationLabel.isHidden = true }
+        didSet {
+            presentationLabel.isHidden = true
+            presentationLabel.text = "credit_score_presentation".localized
+        }
     }
     @IBOutlet weak var scoreLabel: UILabel! {
         didSet { scoreLabel.isHidden = true }

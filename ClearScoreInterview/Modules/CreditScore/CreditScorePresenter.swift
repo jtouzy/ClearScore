@@ -31,7 +31,7 @@ extension CreditScorePresenterImpl: CreditScorePresenter {
                 let maxScore = creditScore.creditReportInfo.maxScoreValue
                 self.view?.setScoreState(CreditScoreModelUI(
                     score: "\(score)",
-                    maxScore: "out of \(maxScore)",
+                    maxScore: "credit_score_maximum".localizedWith("\(maxScore)"),
                     percentage: Double((score * 100) / maxScore)
                 ))
             }
