@@ -8,12 +8,18 @@
 
 import UIKit
 
+//
+// MARK: View protocol
+//
 protocol CreditScoreView: class {
     func setLoadingState()
     func setScoreState(_ model: CreditScoreModelUI)
     func setErrorState(_ message: String)
 }
 
+//
+// MARK: Local specifications, constants
+//
 struct CreditScoreViewControllerSpecs {
     static let containerCircleRadius: CGFloat = UIScreen.main.bounds.size.width / 3
     static let containerCircleBorderWidth: CGFloat = 1
@@ -29,6 +35,9 @@ struct CreditScoreViewControllerSpecs {
 
 private typealias Specs = CreditScoreViewControllerSpecs
 
+//
+// MARK: Module view controller.
+//
 class CreditScoreViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var presentationLabel: UILabel! {
@@ -66,6 +75,9 @@ class CreditScoreViewController: UIViewController {
     }
 }
 
+//
+// MARK: Extension for view protocol implementation
+//
 extension CreditScoreViewController: CreditScoreView {
     func setLoadingState() {
         errorLabel.hide()
@@ -110,6 +122,9 @@ extension CreditScoreViewController: CreditScoreView {
     }
 }
 
+//
+// MARK: Extension for private functions
+//
 extension CreditScoreViewController {
     private func hideActivityIndicatorWithAnimation(andThen completion: @escaping () -> Void) {
         DispatchQueue.main.async { [weak self] in

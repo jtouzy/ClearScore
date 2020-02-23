@@ -8,6 +8,9 @@
 
 import Foundation
 
+//
+// MARK: Extension to implements HTTPInvoker protocol
+//
 extension URLSession: HTTPInvoker {
     func call(request: URLRequest, completionHandler: @escaping DataTaskResult) {
         let task = dataTask(with: request, completionHandler: completionHandler)

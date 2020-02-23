@@ -8,6 +8,9 @@
 
 import Foundation
 
+//
+// MARK: Extension to simplify the use of localized strings.
+//
 extension String {
     var localized: String {
         return NSLocalizedString(self, comment: "")

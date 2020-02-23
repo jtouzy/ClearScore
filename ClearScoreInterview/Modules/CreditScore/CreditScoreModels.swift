@@ -6,6 +6,10 @@
 //  Copyright © 2020 jtouzy. All rights reserved.
 //
 
+//
+// MARK: UI Model
+// The CreditScore module UI model
+//
 class CreditScoreModelUI {
     let score: String
     let maxScore: String

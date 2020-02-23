@@ -8,6 +8,9 @@
 
 import UIKit
 
+//
+// MARK: Extension to simplify UIViewController creation
+//
 extension UIViewController {
     static let mainStoryboard = "Main"
 

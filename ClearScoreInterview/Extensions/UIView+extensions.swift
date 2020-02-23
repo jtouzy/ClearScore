@@ -8,6 +8,9 @@
 
 import UIKit
 
+//
+// MARK: Extension to simplify shapes creation, and view management
+//
 extension UIView {
     @discardableResult func drawCircle(
         fromCenter center: CGPoint? = nil,

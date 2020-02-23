@@ -8,6 +8,10 @@
 
 import UIKit
 
+//
+// MARK: Assembler
+// A single entry point for a module
+//
 class CreditScoreAssembler {
     static func assemble() -> CreditScoreViewController? {
         guard let viewController: CreditScoreViewController = UIViewController.load() else {

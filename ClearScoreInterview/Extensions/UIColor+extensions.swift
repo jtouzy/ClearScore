@@ -8,6 +8,9 @@
 
 import UIKit
 
+//
+// MARK: Extension to simplify the access of Assets colors.
+//
 extension UIColor {
     static var primary: UIColor? {
         UIColor(named: "Primary")

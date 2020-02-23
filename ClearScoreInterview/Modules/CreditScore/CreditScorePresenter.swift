@@ -8,20 +8,29 @@
 
 import UIKit
 
+//
+// MARK: Presenter protocol
+//
 protocol CreditScorePresenter {
     func didLoad()
     func didTapRetry()
 }
 
+//
+// MARK: Presenter implementation
+//
 class CreditScorePresenterImpl {
     weak var view: CreditScoreView?
-    lazy var dataProvider: DataProvider = HTTPDataProvider() // FIXME: Interactor
+    lazy var dataProvider: DataProvider = HTTPDataProvider()
 
     init(view: CreditScoreView) {
         self.view = view
     }
 }
 
+//
+// MARK: Extension for presenter protocol implementation
+//
 extension CreditScorePresenterImpl: CreditScorePresenter {
     func didLoad() {
         fetchCreditScoreWithLoader()
@@ -32,6 +41,9 @@ extension CreditScorePresenterImpl: CreditScorePresenter {
     }
 }
 
+//
+// MARK: Extension for private functions
+//
 extension CreditScorePresenterImpl {
     private func fetchCreditScoreWithLoader() {
         view?.setLoadingState()
