@@ -1,6 +1,6 @@
 # ClearScore
 
-Demo app for ClearScore iOS Developer interview.
+Demo app for ClearScore.
 
 ## Quick overview
 
