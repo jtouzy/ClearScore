@@ -6,7 +6,7 @@
 //  Copyright © 2020 jtouzy. All rights reserved.
 //
 
-@testable import ClearScoreInterview
+@testable import ClearScore
 import Foundation
 
 class DataProviderMock: DataProvider {
@@ -28,6 +28,7 @@ class DataProviderMock: DataProvider {
 class CreditScoreViewMock: CreditScoreView {
     var setLoadingStateStatus = CallStatus<Never>.none
     var setScoreStateStatus = CallStatus<CreditScoreModelUI>.none
+    var setErrorStatus = CallStatus<String>.none
 
     func setLoadingState() {
         setLoadingStateStatus.iterate()
@@ -36,12 +37,21 @@ class CreditScoreViewMock: CreditScoreView {
     func setScoreState(_ model: CreditScoreModelUI) {
         setScoreStateStatus.iterate(with: model)
     }
+
+    func setErrorState(_ message: String) {
+        setErrorStatus.iterate(with: message)
+    }
 }
 
 class CreditScorePresenterMock: CreditScorePresenter {
     var didLoadStatus = CallStatus<Never>.none
+    var didTapRetryStatus = CallStatus<Never>.none
 
     func didLoad() {
         didLoadStatus.iterate()
+    }
+
+    func didTapRetry() {
+        didTapRetryStatus.iterate()
     }
 }

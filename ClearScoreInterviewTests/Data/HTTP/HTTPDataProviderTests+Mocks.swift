@@ -6,7 +6,7 @@
 //  Copyright © 2020 jtouzy. All rights reserved.
 //
 
-@testable import ClearScoreInterview
+@testable import ClearScore
 import Foundation
 
 class HTTPInvokerMock: HTTPInvoker {

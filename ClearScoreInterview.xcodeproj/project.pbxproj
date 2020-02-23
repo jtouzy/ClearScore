@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -489,6 +489,7 @@
 /* Begin PBXTargetDependency section */
 		53F2BCAB240004D6005D0433 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 53F2BC92240004D0005D0433 /* ClearScoreInterview */;
 			targetProxy = 53F2BCAA240004D6005D0433 /* PBXContainerItemProxy */;
 		};
@@ -635,7 +636,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jtouzy.ClearScoreInterview;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jtouzy.ClearScore;
 				PRODUCT_NAME = ClearScore;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -652,7 +653,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jtouzy.ClearScoreInterview;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jtouzy.ClearScore;
 				PRODUCT_NAME = ClearScore;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -678,7 +679,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClearScoreInterview.app/ClearScoreInterview";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClearScore.app/ClearScore";
 			};
 			name = Debug;
 		};
@@ -700,7 +701,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClearScoreInterview.app/ClearScoreInterview";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClearScore.app/ClearScore";
 			};
 			name = Release;
 		};

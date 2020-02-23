@@ -6,7 +6,7 @@
 //  Copyright © 2020 jtouzy. All rights reserved.
 //
 
-@testable import ClearScoreInterview
+@testable import ClearScore
 import XCTest
 
 class CreditScoreViewControllerTests: XCTestCase {
@@ -71,5 +71,27 @@ extension CreditScoreViewControllerTests {
         XCTAssertEqual(package.sut.scoreLabel.text, "500")
         XCTAssertFalse(package.sut.maximumScoreLabel.isHidden)
         XCTAssertEqual(package.sut.maximumScoreLabel.text, "out of 1000")
+        XCTAssertTrue(package.sut.errorLabel.isHidden)
+        XCTAssertTrue(package.sut.retryButton.isHidden)
+    }
+
+    func test_setErrorState_shouldShowErrorMessageAndHidesActivityIndicator() {
+        // Given
+        let package = createSUT()
+        _ = package.sut.view
+        // When
+        package.sut.setErrorState("Error message")
+        // Then
+        waitForRunLoop(timeout:
+            CreditScoreViewControllerSpecs.hideActivityIndicatorAnimationDuration +
+            CreditScoreViewControllerSpecs.drawLabelsAnimationDuration
+        )
+        XCTAssertTrue(package.sut.activityIndicator.isHidden)
+        XCTAssertTrue(package.sut.presentationLabel.isHidden)
+        XCTAssertTrue(package.sut.scoreLabel.isHidden)
+        XCTAssertTrue(package.sut.maximumScoreLabel.isHidden)
+        XCTAssertFalse(package.sut.errorLabel.isHidden)
+        XCTAssertEqual(package.sut.errorLabel.text, "Error message")
+        XCTAssertFalse(package.sut.retryButton.isHidden)
     }
 }

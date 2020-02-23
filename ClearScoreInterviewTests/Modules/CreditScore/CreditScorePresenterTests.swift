@@ -6,7 +6,7 @@
 //  Copyright © 2020 jtouzy. All rights reserved.
 //
 
-@testable import ClearScoreInterview
+@testable import ClearScore
 import XCTest
 
 class CreditScorePresenterTests: XCTestCase {
@@ -55,5 +55,19 @@ extension CreditScorePresenterTests {
         XCTAssertEqual(firstCallParam.score, "\(reportInfo.score)")
         XCTAssertEqual(firstCallParam.maxScore, "out of \(reportInfo.maxScoreValue)")
         XCTAssertEqual(firstCallParam.percentage, 50)
+    }
+
+    func test_didLoad_shouldInvokeViewUpdateWithError() {
+        // Given
+        let package = createSUT(error: NetworkLayerError.networkFailure(cause: nil))
+        // When
+        package.sut.didLoad()
+        // Then
+        XCTAssertTrue(package.view.setErrorStatus.isCalled)
+        guard let firstCallParam = package.view.setErrorStatus.firstCallParam else {
+            XCTFail("setErrorState should be called")
+            return
+        }
+        XCTAssertEqual(firstCallParam, NetworkLayerError.networkFailure(cause: nil).localizedMessage)
     }
 }
