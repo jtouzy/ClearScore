@@ -9,11 +9,11 @@ In the technical test specs, the application should be production ready. Based o
 * is localization ready (available for 🇬🇧 & 🇫🇷)
 * is dark-mode ready (colors & images are available in each user interface style)
 * is [multiple-environment ready](#environment)
-* is unit-tested with 99% coverage
+* is unit-tested with 95%+ coverage
 
 ## Project architecture details
 
-### Data
+### <a name="data"></a>Data
 
 This folder contains all the data layer. A protocol named `DataProvider` is an abstraction of the data query methods. A single implementation of this protocol is present, the `HTTPDataProvider`, which fetches the data from the AWS HTTP endpoint.
 
@@ -52,11 +52,20 @@ UIKit & Foundations extensions.
 
 ### Modules
 
-All MVP modules.
+This folder contains all applications screens, named as modules because of their content.
+
+Each screen of the application will be architectured in a MVP module. For this demo, only one screen is asked.
+
+The logic behind the MVP pattern is to separate layers for easy testing : 
+* make the view more simple : only components updates with view models, and animations 
+* a presenter which receives view actions, make network data transformations for view updates
+* another layer, [the data layer](#data), is here for handling network calls
+
+You can see a more detailed structure (using VIPER architecture, navigation, ...) in another personal project : [PocketBudget](https://github.com/jtouzy/PocketBudget), a side project application for managing your month budgets easily (not yet in production). This app is public on Github, because it's main target is to be a Swift architecture demo.
 
 ### Protocols
 
-Global reusable protocols.
+This folder contains global reusable protocols. The only protocol used for this demo is `UIIdentifiable`, a protocol used to uniquely identify classes like UIViewControllers or UIViews, to improve the way of creating them, as you can see in extensions.
 
 ### Resources
 
